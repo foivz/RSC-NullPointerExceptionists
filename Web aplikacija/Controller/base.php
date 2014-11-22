@@ -2,15 +2,15 @@
 
 class base {
 
-    static $hostname = 'localhost';
-    static $username = 'WebDiP2013_015';
-    static $password = 'WebDiP2013_015';
-    static $dbname = 'WebDiP2013_015';
+        static $hostname = 'localhost';
+        static $username = 'WebDiP2013_015';
+        static $password = 'admin_QzTV';
+        static $dbname = 'WebDiP2013_015';
 
     function connectBase() {
-        try {
-            $base = new PDO("mysql:host=" . self::$hostname . ";dbname=" . self::$dbname . ", " . self::$username . ", " . self::$password);
 
+        try {
+            $base = new PDO("mysql:host=" . self::$hostname . ";dbname=" . self::$dbname, self::$username, self::$password);
         }
         catch(PDOException $e) {
             echo $e->getMessage();
@@ -18,11 +18,11 @@ class base {
         return $base;
     }
 
-    function insertUpdate($query, $connection) {
+    function insertUpdate($query) {
 
         try {
-
-            $result = $connection->exec($query);
+            $base = new PDO("mysql:host=" . self::$hostname . ";dbname=" . self::$dbname, self::$username, self::$password);
+            $result = $base->exec($query);
             return $result;
         } catch(PDOException $e) {
             echo $e->getMessage();
@@ -30,10 +30,12 @@ class base {
 
     }
 
-    function select($query, $connection) {
+    function select($query) {
         try {
 
-            $result = $connection->query($query);
+            $base = new PDO("mysql:host=" . self::$hostname . ";dbname=" . self::$dbname, self::$username, self::$password);
+            $res = $base->query($query);
+            $result = $res->fetch(PDO::FETCH_ASSOC);
             return $result;
         } catch(PDOException $e) {
             echo $e->getMessage();
