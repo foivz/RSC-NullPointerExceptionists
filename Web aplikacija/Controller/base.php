@@ -2,21 +2,20 @@
 
 class base {
 
-    static $hostname = 'localhost';
-    static $username = 'WebDiP2013_015';
-    static $password = 'admin_QzTV';
-    static $dbname = 'WebDiP2013_015';
+    static private $hostname = 'localhost';
+    static private $username = 'root';
+    static private $password = '';
+    static private $dbname = 'b_donator';
+    private $mysqli;
 
     function connectBase()
     {
-        $mysqli = new mysqli(self::$hostname, self::$username, self::$password, self::$dbname);
-
-        return $mysqli;
+        $this->mysqli = new mysqli(self::$hostname, self::$username, self::$password, self::$dbname);
     }
 
-    function runQuery($query, $connection) {
+    function runQuery($query) {
 
-        $result = $connection->query($query);
+        $result = $this->mysqli->query($query);
 
         if (!$result) {
             $result = null;
@@ -24,18 +23,18 @@ class base {
         return $result;
     }
 
-    function insUpd($query, $connection) {
+    function insUpd($query) {
 
-        $result = $connection->query($query);
+        $result = $this->mysqli->query($query);
         return $result;
     }
 
-    function lastId($connection) {
-        return $connection->insert_id;
+    function lastId() {
+        return $this->mysqli->insert_id;
     }
 
-    function closeConn($connection)
+    function closeConn()
     {
-        $connection->close();
+        $this->mysqli->close();
     }
 }
