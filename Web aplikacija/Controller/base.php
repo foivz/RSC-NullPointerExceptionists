@@ -14,7 +14,7 @@ class base {
         return $mysqli;
     }
 
-    function query($query, $connection) {
+    function runQuery($query, $connection) {
 
         $result = $connection->query($query);
 
@@ -30,11 +30,11 @@ class base {
         return $result;
     }
 
-    function zadnjiId($connection) {
+    function lastId($connection) {
         return $connection->insert_id;
     }
 
-    function ubijKonekciju($connection) {
+    function closeConn($connection) {
         $connection->close();
     }
 }
