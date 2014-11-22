@@ -1,6 +1,6 @@
 <ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent" 
+    android:layout_height="wrap_content" 
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
 	<LinearLayout 
@@ -11,7 +11,7 @@
 	    android:layout_marginBottom="15dp"
 	    android:gravity="center_horizontal"
 	    >
-	
+		
 	    <TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -23,8 +23,8 @@
 	        android:layout_width="300dp"
 	        android:layout_height="wrap_content"
 	        android:layout_marginBottom="20dp"
-	        android:gravity="center"
 	        android:imeOptions="actionNext"
+	       	
 	        android:hint="@string/str_dodirni"
 	        >
 	        <requestFocus />
@@ -41,7 +41,6 @@
 	        android:layout_width="300dp"
 	        android:layout_height="wrap_content"
 	        android:layout_marginBottom="20dp"
-	        android:gravity="center"
 	        android:imeOptions="actionNext"
 	        android:hint="@string/str_dodirni"
 	        >
@@ -60,8 +59,79 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_marginBottom="20dp"
+	        android:entries="@array/gradovi_array"
+	        android:minWidth="20dp"
 	        />
+
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/str_spol"
+	        android:textSize="20sp" />
+
+	    <Spinner
+	        android:id="@+id/spinner_spolovi"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:entries="@array/spol_array"
+	        />
+
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/str_tezina"
+	        android:textSize="20sp" />
+	    <EditText
+	        android:id="@+id/edit_weight"
+	        android:layout_width="300dp"
+	        android:layout_height="wrap_content"
+	        android:ems="10"
+	        android:hint="@string/str_dodirni"
+	        android:inputType="numberDecimal" />
+
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/str_email"
+	        android:textSize="20sp" />
+	    <EditText
+	        android:id="@+id/edit_mail"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:ems="10"
+	        android:hint="@string/str_dodirni"
+	        android:inputType="textEmailAddress" />
+
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/str_password"
+	        android:textSize="20sp" />
+	    <EditText
+	        android:id="@+id/edit_password_register"
+	        android:layout_width="300dp"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="20dp"
+	        android:ems="10"
+	        android:hint="@string/str_dodirni"
+	        android:imeOptions="actionDone"
+	        android:inputType="number" />
 	    
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="@string/str_mobitel"
+	        android:textSize="20sp" />
+
+	    <EditText
+	        android:id="@+id/edit_mobitel"
+	        android:layout_width="300dp"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="20dp"
+	        android:ems="10"
+	        android:hint="@string/str_dodirni"
+	        android:imeOptions="actionNext"
+	        android:inputType="phone" />
 	    
 	    <TextView
 	        android:id="@+id/label_date_register"
@@ -71,11 +141,25 @@
 	        android:layout_marginBottom="10dp"
 	        android:text="@string/str_datum_r" 
 	        />
+	    
 	    <Button
 	        android:id="@+id/button_date_register"
 	        android:layout_width="200dp"
 	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="50dp"
+	        android:background="#DC143C"
+	        android:textColor="#FFFFFF"
 	        android:text="@string/str_odaberi_datum"
+	        />
+	    
+	     <Button
+	        android:id="@+id/button_confirm_register"
+	        android:layout_width="200dp"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="25dp"
+	        android:background="#DC143C"
+	        android:textColor="#FFFFFF"
+	        android:text="@string/str_button_confirm"
 	        />
 	</LinearLayout>
     

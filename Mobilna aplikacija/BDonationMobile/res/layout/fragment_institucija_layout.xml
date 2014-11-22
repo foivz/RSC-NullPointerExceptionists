@@ -3,14 +3,33 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:gravity="center"
-    android:background="#5ba4e5"
+    
     android:layout_height="match_parent">
+
     <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="40px"
-        android:text="fragmentInstitucija"
-        android:textColor="#ffffff"
-        android:layout_gravity="center"
-        android:id="@+id/detail"/>
+        android:text="Odaberi instituciju"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_generiraj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generiraj" />
+    
+    <com.npe.holographlibrary.PieGraph
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/graph"/>
+    
+   
+   
 </LinearLayout>

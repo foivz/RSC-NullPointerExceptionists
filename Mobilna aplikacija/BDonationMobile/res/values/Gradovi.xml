@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gradovi_array">
+        <item> Varaždin </item>
+        <item> Zagreb </item>
+        <item> Osijek </item>
+        <item> Split </item>
+        <item> Zaprešić </item>
+        <item> Pula </item>
+    </string-array>
+</resources>

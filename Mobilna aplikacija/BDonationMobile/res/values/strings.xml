@@ -2,8 +2,10 @@
 <resources>
 
     <string name="app_name">BDonationMobile</string>
+    
     <string name="drawer_open"> Otvori izbornik</string>
     <string name="drawer_close">Zatvori izbornik</string>
+    
     <string name="str_dodirni">Dodirni za unos: </string>
     <string name="str_login"> Prijava</string>
     <string name="str_register"> Registracija</string>
@@ -12,8 +14,15 @@
     <string name="str_ime"> Ime: </string>
     <string name="str_prezime"> Prezime: </string>
     <string name="str_datum_r"> Datum rođenja: </string>
-    <string name="str_grad"> Odaberi grad</string>
+    <string name="str_grad"> Odaberi grad: </string>
     <string name="str_odaberi_datum"> Odaberi datum</string>
+    <string name="str_oib"> OIB: </string>
+    <string name="str_mobitel">Mobitel:</string>
+    <string name="str_button_confirm"> Potvrdi </string>
+    <string name="str_spol">Spol</string>
+    <string name="str_tezina">Tezina</string>
+    <string name="str_email">E-mail</string>
+    
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="hello_world">Hello world!</string>
