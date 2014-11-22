@@ -42,7 +42,7 @@
 
         <div id="iframe-container">
                 <iframe src="<?php echo $iframeSrc; ?>" frameborder="0">
-                    Došlo je do greške kod učitavnja stranice.
+                    Došlo je do griješke kod učitavnja stranice.
                 </iframe>
         </div>
 
