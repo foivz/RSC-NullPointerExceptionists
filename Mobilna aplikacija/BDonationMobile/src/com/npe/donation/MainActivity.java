@@ -2,7 +2,10 @@ package com.npe.donation;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -21,20 +24,35 @@ import com.npe.drawer.FragmentInstitucija;
 import com.npe.drawer.FragmentNovosti;
 import com.npe.drawer.FragmentProfil;
 import com.npe.drawer.FragmentStatistika;
+import com.npe.helpers.DatabaseManager;
+
+
 
 public class MainActivity extends ActionBarActivity {
-	private String[] menu;
-	private String Title;
+	
+	
 	private DrawerLayout dLayout;
+	private Fragment fragment = null;
 	private ListView dList;
+	
 	private ArrayAdapter<String> adapter;
 	private ActionBarDrawerToggle mDrawerToggle;
-	private Fragment fragment=null;
+	
+	private String[] menu;
+	private String Title;
+	
+	private DatabaseManager database;
 	
 
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		database = new DatabaseManager(this);
+		
+
 		setContentView(R.layout.activity_main);
 
 		menu = new String[] { "Doniraj", "Novosti", "Statistika", "Achivments",
@@ -163,4 +181,50 @@ public class MainActivity extends ActionBarActivity {
 	        }
 	    }
 	 
+	    
+	    
+	    
+	    
+	    @Override
+	    protected void onStart() {
+	    	// TODO Auto-generated method stub
+	    	super.onStart();
+	    	new CheckUser().execute();
+	    }
+	    
+	    
+	    
+	    
+	    private class CheckUser extends AsyncTask<Void, Void, Boolean>{
+	    	private ProgressDialog pd;
+	    	
+	    	@Override
+	    	protected void onPreExecute() {
+	    		// TODO Auto-generated method stub
+	    		super.onPreExecute();
+	    		pd = new ProgressDialog(MainActivity.this);
+	    		pd.show();
+	    	}
+	    	
+			@Override
+			protected Boolean doInBackground(Void... params) {
+				// TODO Auto-generated method stub				
+				return database.userLoggedIn();
+			}
+			
+			@Override
+			protected void onPostExecute(Boolean result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+			if(pd.isShowing())
+				pd.dismiss();
+			if(!result){
+				Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+				finish();
+				startActivity(intent);
+				}
+			}// end void onPostExecute()
+	    }// end class checkUser
+	    
+	    
 }
