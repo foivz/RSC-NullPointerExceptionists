@@ -3,8 +3,11 @@
 
     if (!isset($_SESSION['userId'])) {
         $iframeSrc = "View/prijava.php";
+        $prijava_odjava = "<a href=\"View/prijava.php\">Prijava</a>";
+
     } else {
         $iframeSrc = "#";
+        $prijava_odjava = "<a href=\"Controller/logout.php\">Odjava</a>";
     }
 ?>
 
@@ -31,7 +34,7 @@
                         <a href="#">Donatori</a>
                     </li>
                     <li>
-                        <a href="#">Prijava</a>
+                        <?php echo $prijava_odjava; ?>
                     </li>
                 </ul>
             </nav>
