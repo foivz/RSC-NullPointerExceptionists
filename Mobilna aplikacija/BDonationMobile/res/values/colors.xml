@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <color
+        name="ACTION_BAR_TEXT_COLOR"
+        >#FFFFFF</color>
+</resources>
