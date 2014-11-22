@@ -7,42 +7,34 @@ class base {
         static $password = 'admin_QzTV';
         static $dbname = 'WebDiP2013_015';
 
-    function connectBase() {
+    function connectBase()
+    {
+        $mysqli = new mysqli(self::$hostname, self::$username, self::$password, self::$dbname);
 
-        try {
-            $base = new PDO("mysql:host=" . self::$hostname . ";dbname=" . self::$dbname, self::$username, self::$password);
-        }
-        catch(PDOException $e) {
-            echo $e->getMessage();
-        }
-        return $base;
+        return $mysqli;
     }
 
-    function insertUpdate($query) {
+    function query($query, $connection) {
 
-        try {
-            $base = new PDO("mysql:host=" . self::$hostname . ";dbname=" . self::$dbname, self::$username, self::$password);
-            $result = $base->exec($query);
-            return $result;
-        } catch(PDOException $e) {
-            echo $e->getMessage();
+        $result = $connection->query($query);
+
+        if (!$result) {
+            $result = null;
         }
-
+        return $result;
     }
 
-    function select($query) {
-        try {
+    function insUpd($query, $connection) {
 
-            $base = new PDO("mysql:host=" . self::$hostname . ";dbname=" . self::$dbname, self::$username, self::$password);
-            $res = $base->query($query);
-            $result = $res->fetch(PDO::FETCH_ASSOC);
-            return $result;
-        } catch(PDOException $e) {
-            echo $e->getMessage();
-        }
+        $result = $connection->query($query);
+        return $result;
     }
 
-    function closeConnection($connection) {
-        $connection = null;
+    function zadnjiId($connection) {
+        return $connection->insert_id;
+    }
+
+    function ubijKonekciju($connection) {
+        $connection->close();
     }
 }
