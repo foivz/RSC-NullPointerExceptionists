@@ -91,5 +91,5 @@ if(isset($_POST['submit'])) {
         $result = $base->insUpd($query, $connection);
         $base->closeConnection($connection);
         header("Location: " . dirname($_SERVER['REQUEST_URI']) . '../index.php');
-        }
+    }
 }

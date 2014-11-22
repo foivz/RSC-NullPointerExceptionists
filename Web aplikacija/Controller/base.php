@@ -2,10 +2,10 @@
 
 class base {
 
-        static $hostname = 'localhost';
-        static $username = 'WebDiP2013_015';
-        static $password = 'admin_QzTV';
-        static $dbname = 'WebDiP2013_015';
+    static $hostname = 'localhost';
+    static $username = 'WebDiP2013_015';
+    static $password = 'admin_QzTV';
+    static $dbname = 'WebDiP2013_015';
 
     function connectBase()
     {
