@@ -8,7 +8,6 @@
         header("Location: View/prijava.php");
     }
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
