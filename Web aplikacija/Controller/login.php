@@ -48,6 +48,6 @@ function createSession($userId) {
     $_SESSION['city'] = $row['city'];
     $_SESSION['oib'] = $row['oib'];
     $_SESSION['blood_type'] = $row['blood_type'];
-    $_SESSION['institution'] = $row['intitution'];
+    $_SESSION['institution'] = $row['institution'];
 }
 ?>

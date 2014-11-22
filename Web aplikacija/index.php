@@ -1,13 +1,11 @@
 <?php
     session_start();
 
-    if (!isset($_SESSION['userId'])) {
-        $iframeSrc = "View/prijava.php";
-        $prijava_odjava = "<a href=\"View/prijava.php\">Prijava</a>";
-
-    } else {
-        $iframeSrc = "#";
+    if (isset($_SESSION['userId'])) {
         $prijava_odjava = "<a href=\"Controller/logout.php\">Odjava</a>";
+    }
+    else {
+        header("Location: View/prijava.php");
     }
 ?>
 
@@ -16,6 +14,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="View/CSS/style-index.css">
+        <link rel="stylesheet" type="text/css" href="View/CSS/style-form.css">
     </head>
     <body>
         <header>
@@ -34,16 +33,15 @@
                         <a href="#">Donatori</a>
                     </li>
                     <li>
-                        <?php echo $prijava_odjava; ?>
+                        <?php
+                        echo $prijava_odjava;
+                        ?>
                     </li>
                 </ul>
             </nav>
         </header>
 
         <div id="iframe-container">
-                <iframe src="<?php echo $iframeSrc; ?>" frameborder="0">
-                    Došlo je do griješke kod učitavnja stranice.
-                </iframe>
         </div>
 
         <footer>
