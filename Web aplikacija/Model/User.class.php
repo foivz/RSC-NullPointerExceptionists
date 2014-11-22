@@ -134,6 +134,91 @@
 		{
 			return $this->accountBlocked;
 		}
+
+		public function setID($id)
+		{
+			$this->id = $id;
+		}
+
+		public function setUsername($username)
+		{
+			$this->username = $username;
+		}
+		
+		public function setPassword($password)
+		{
+			$this->password = $password;
+		}
+		
+		public function setName($name)
+		{
+			$this->name = $name;
+		}
+		
+		public function setSurname($surname)
+		{
+			$this->surname = $surname;
+		}
+		
+		public function setDateOfBirth($dateOfBirth)
+		{
+			$this->dateOfBirth = $dateOfBirth;
+		}
+		
+		public function setWeight($weight)
+		{
+			$this->weight = $weight;
+		}
+		
+		public function setGender($gender)
+		{
+			$this->gender = $gender;
+		}
+		
+		public function setEmail($email)
+		{
+			$this->email = $email;
+		}
+		
+		public function setCity($city)
+		{
+			$this->city = $city;
+		}
+		
+		public function setOIB($oib)
+		{
+			$this->oib = $oib;
+		}
+		
+		public function setBloodType($bloodType)
+		{
+			$this->bloodType = $bloodType;
+		}
+		
+		public function setUserType($userType)
+		{
+			$this->userType = $userType;
+		}
+		
+		public function setInstitution($institution)
+		{
+			$this->institution = $institution;
+		}
+		
+		public function setAchievements($achievements)
+		{
+			$this->achievements = $achievements;
+		}
+
+		public function setDonations($donations)
+		{
+			$this->donations = $donations;
+		}
+
+		public function setAccountStatus($accountBlocked;)
+		{
+			$this->accountBlocked = $accountBlocked;
+		}
 	}
 
 ?>
