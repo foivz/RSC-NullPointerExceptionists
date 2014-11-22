@@ -3,11 +3,11 @@
 
     if (!isset($_SESSION['userId'])) {
         $iframeSrc = "View/prijava.php";
-        $prijava_odjava = "<a href=\"View/prijava.php\">Prijava</a>";
+        $prijava_odjava = "<a href=\"#\" onclick=\"LoginOnClick()\">Prijava</a>";
 
     } else {
         $iframeSrc = "#";
-        $prijava_odjava = "<a href=\"Controller/logout.php\">Odjava</a>";
+        $prijava_odjava = "<a href=\"#\" onclick=\"LogoutOnClick()\">Odjava</a>";
     }
 ?>
 
@@ -28,7 +28,7 @@
                         <a href="#">Početna</a>
                     </li>
                     <li>
-                        <a href="#">Institucije</a>
+                        <a href="#" onclick="InstitutionOnClick()">Institucije</a>
                     </li>
                     <li>
                         <a href="#">Donatori</a>
@@ -41,7 +41,7 @@
         </header>
 
         <div id="iframe-container">
-                <iframe src="<?php echo $iframeSrc; ?>" frameborder="0">
+                <iframe id="iframe-element" src="<?php echo $iframeSrc; ?>" frameborder="0">
                     Došlo je do griješke kod učitavnja stranice.
                 </iframe>
         </div>
@@ -49,4 +49,19 @@
         <footer>
         </footer>
     </body>
+    <script>
+        var iframeElement = document.getElementById("iframe-element");
+        function InstitutionOnClick()
+        {
+            iframeElement.src = "View/institucije.php"; 
+        }
+        function LoginOnClick()
+        {
+            iframeElement.src = "View/prijava.php"; 
+        }
+        function LogoutOnClick()
+        {
+            iframeElement.src = "View/odjava.php"; 
+        }
+    </script>
 </html>
