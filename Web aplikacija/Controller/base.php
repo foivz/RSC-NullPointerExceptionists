@@ -34,7 +34,8 @@ class base {
         return $connection->insert_id;
     }
 
-    function closeConn($connection) {
+    function closeConn($connection)
+    {
         $connection->close();
     }
 }
