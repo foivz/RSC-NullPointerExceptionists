@@ -1,12 +1,11 @@
 <?php
-session_start();
+    session_start();
 
-if (!isset($_SESSION['logged'])) {
-    $iframeSrc = "View/prijava.php";
-} else {
-    $iframeSrc = "#";
-}
-
+    if (!isset($_SESSION['logged'])) {
+        $iframeSrc = "View/prijava.php";
+    } else {
+        $iframeSrc = "#";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -26,10 +25,13 @@ if (!isset($_SESSION['logged'])) {
                         <a href="#">Početna</a>
                     </li>
                     <li>
-                        <a href="#">Nešto</a>
+                        <a href="#">Institucije</a>
                     </li>
                     <li>
-                        <a href="#">Odjava</a>
+                        <a href="#">Donatori</a>
+                    </li>
+                    <li>
+                        <a href="#">Prijava</a>
                     </li>
                 </ul>
             </nav>
