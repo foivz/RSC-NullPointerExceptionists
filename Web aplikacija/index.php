@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['logged'])) {
+    $iframeSrc = "View/prijava.php";
+} else {
+    $iframeSrc = "#";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +24,7 @@
                 <ul>
                     <li>
                         <a href="#">Početna</a>
-                    </li> 
+                    </li>
                     <li>
                         <a href="#">Nešto</a>
                     </li>
@@ -28,7 +36,7 @@
         </header>
 
         <div id="iframe-container">
-                <iframe src="" frameborder="0">
+                <iframe src="<?php echo $iframeSrc; ?>" frameborder="0">
                     Došlo je do greške kod učitavnja stranice.
                 </iframe>
         </div>
