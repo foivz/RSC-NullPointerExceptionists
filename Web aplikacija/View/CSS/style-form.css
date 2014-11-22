@@ -1,5 +1,6 @@
 body {
 	background: #EFEFEF;
+	font-family: arial, helvetica, sans-serif;
 }
 
 .form {
@@ -25,7 +26,7 @@ body {
 	text-decoration: none;
 	border-style: none;
 	height: 40px;
-	width: 90px;
+	width: 110px;
 	color: #FFFFFF;
 	font-family: arial, helvetica, sans-serif;
 	font-weight: bold;
@@ -40,7 +41,10 @@ body {
 }
 
 .input-label > input[type=text],
-.input-label > input[type=password] {
+.input-label > input[type=password],
+.input-label > input[type=date],
+.input-label > input[type=email],
+.input-label > input[type=number] {
 	font-family: arial, helvetica, sans-serif;
 	height: 25px;
 	border-radius: 10px;
@@ -49,7 +53,19 @@ body {
 	border-color: #CFCFCF
 }
 
+.input-label > input[type=radio] {
+	font-family: arial, helvetica, sans-serif;
+}
+
 .input-label > label {
+	font-family: arial, helvetica, sans-serif;
+	display: inline-block;
+	text-align: right;
+	width: 150px;
+	margin-right: 5px;
+}
+
+.faux-label {
 	font-family: arial, helvetica, sans-serif;
 	display: inline-block;
 	text-align: right;
