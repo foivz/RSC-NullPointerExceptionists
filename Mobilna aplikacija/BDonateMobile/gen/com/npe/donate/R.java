@@ -17,6 +17,14 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
+        public static final int OIB=0x7f07000b;
+        public static final int birth_date=0x7f07000a;
+        public static final int email_adress=0x7f070008;
+        public static final int first_name=0x7f070006;
+        public static final int last_name=0x7f070007;
+        public static final int new_password=0x7f070009;
+        public static final int register_title=0x7f070005;
+        public static final int registration_confirm_button=0x7f07000c;
         public static final int sign_in_button=0x7f070003;
         public static final int sign_up_button=0x7f070004;
         public static final int textView1=0x7f070000;
@@ -25,9 +33,12 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_login=0x7f030000;
+        public static final int register_layout=0x7f030001;
     }
     public static final class string {
         public static final int Log_in_screen_title=0x7f040002;
+        public static final int Register_screen_title=0x7f040005;
+        public static final int Submit_button=0x7f040006;
         public static final int app_name=0x7f040000;
         public static final int hello_world=0x7f040001;
         public static final int sign_in=0x7f040003;
