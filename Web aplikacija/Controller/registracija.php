@@ -68,15 +68,15 @@ if(isset($_POST['submit'])) {
 
     $query = "SELECT * FROM user WHERE email = '" . $email . "'";
 
-    $rows = $base->query($query, $connection);
+    $rows = $base->select($query, $connection);
 
-    if ($rows->num_rows != 0) {
+    if ($rows->fetch(PDO::FETCH_NUM) != 0) {
         $error .= "<br />Email is already taken!";
     }
 
     $query = "SELECT * FROM user WHERE username = '" . $username . "'";
-    $rows = $base->query($query, $base->connectBase());
-    if ($rows->num_rows != 0) {
+    $rows = $base->select($query, $connection);
+    if ($rows->fetch(PDO::FETCH_NUM) != 0) {
         $error .= "<br />Username is already taken!";
     }
 
@@ -92,7 +92,7 @@ if(isset($_POST['submit'])) {
         $query = "INSERT INTO user(username, password, name, surname, date_of_birth, weight, gender, email, city, oib, blood_type, institution)
                   VALUES ('{$username}', '{$password1}', '{$name}', '{$surname}', {$date_of_birth}, '{$weight}', '{$gender}', '{$email}', '{$city}', '{$oib}', '{$blood_type}', '{$institution}');";
         $result = $base->insertUpdate($query, $connection);
-            $base->closeConnection($connection);
-            header("Location: " . dirname($_SERVER['REQUEST_URI']) . '/index.php');
+        $base->closeConnection($connection);
+        header("Location: " . dirname($_SERVER['REQUEST_URI']) . '/index.php');
         }
 }
