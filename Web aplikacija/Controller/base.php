@@ -2,10 +2,10 @@
 
 class base {
 
-    static private $hostname = 'localhost';
-    static private $username = 'root';
-    static private $password = '';
-    static private $dbname = 'b_donator';
+    static $hostname = 'localhost';
+    static $username = 'root';
+    static $password = 'root';
+    static $dbname = 'WebDiP2013_015';
     private $mysqli;
 
     function connectBase()

@@ -5,6 +5,7 @@ require_once("base.php");
 session_start();
 
 $base = new base();
+$base ->connectBase();
 
 if(isset($_POST['submit'])) {
     auth($_POST['username'], $_POST['password']);
@@ -12,32 +13,29 @@ if(isset($_POST['submit'])) {
 
 function auth($username, $password) {
     global $base;
-    $connection = $base->connectBase();
-
     $query = "SELECT * FROM user WHERE username = \"{$username}\" AND password = \"{$password}\";";
 
-    $user = $base->select($query, $connection);
+    $user = $base->runQuery($query);
 
-    if($user->fetch(PDO::FETCH_NUM) != 0) {
-        $row = $user->fetch(PDO::FETCH_ASSOC);
+    if($user->num_rows != 0) {
+        $row = $user->fetch_assoc();
         if($row['account_blocked'] != 1) {
             createSession($row['id']);
-            $base->closeConnection($connection);
+            $base->closeConn();
             header("Location: " . dirname(dirname($_SERVER['REQUEST_URI'])) . '/index.php');
             exit();
+        } else {
+            echo "Blokiran račun";
         }
     }
 }
 
 function createSession($userId) {
     global $base;
-    $connection = $base->connectBase();
 
     $query = "SELECT * FROM user WHERE id = \"{$userId}\";";
-    $user = $base->select($query, $connection);
-    $row = $user->fetch(PDO::FETCH_ASSOC);
-
-    session_start();
+    $user = $base->runQuery($query);
+    $row = $user->fetch_assoc();
 
     $_SESSION['userId'] = $userId;
     $_SESSION['username'] = $row['username'];
@@ -50,7 +48,6 @@ function createSession($userId) {
     $_SESSION['city'] = $row['city'];
     $_SESSION['oib'] = $row['oib'];
     $_SESSION['blood_type'] = $row['blood_type'];
-    $_SESSION['intitution'] = $row['intitution'];
+    $_SESSION['institution'] = $row['intitution'];
 }
-
 ?>

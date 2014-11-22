@@ -5,7 +5,7 @@ session_start();
 
 $base = new base();
 
-$connection = $base->connectBase();
+$base->connectBase();
 
 $error = "";
 
@@ -38,10 +38,10 @@ if(isset($_POST['submit'])) {
     $blood_type = $_POST['blood_type'];
     $institution = $_POST['institution'];
 
-    foreach ($_POST as $key => $value) {
-        if ($value == "")
-            $error .= "<br />You didn't fill field: {$key}!";
-    }
+//    foreach ($_POST as $key => $value) {
+//        if ($value == "")
+//            $error .= "<br />You didn't fill field: {$key}!";
+//    }
 
     if (preg_match('/[0-9]/', $name)) {
         $error .= "<br />Name must contain only letters!";
@@ -67,7 +67,7 @@ if(isset($_POST['submit'])) {
 
     $query = "SELECT * FROM user WHERE email = '" . $email . "'";
 
-    $rows = $base->runQuery($query, $connection);
+    $rows = $base->runQuery($query);
 
 //    if ($rows->num_rows != 0) {
 //
@@ -76,20 +76,18 @@ if(isset($_POST['submit'])) {
 
     $query = "SELECT * FROM user WHERE username = '" . $username . "'";
 
-    $rows = $base->runQuery($query, $base->connectBase());
+    $rows = $base->runQuery($query);
 
 //    if ($rows->num_rows != 0) {
 //        $error .= "<br />Username is already taken!";
 //    }
 
+    echo $error;
     if ($error == "") {
 
-        $query = "INSERT INTO user(username, password, name, surname, date_of_birth, weight, gender, email, city, oib, blood_type, institution)
-                  VALUES ('{$username}', '{$password1}', '{$name}', '{$surname}', {$date_of_birth}, '{$weight}', '{$gender}', '{$email}', '{$city}', '{$oib}', '{$blood_type}', '{$institution}');";
-
-        echo $query;
-        $result = $base->insUpd($query, $connection);
-        $base->closeConnection($connection);
-        header("Location: " . dirname($_SERVER['REQUEST_URI']) . '../index.php');
+        $base->insUpd("INSERT INTO user(username, password, name, surname, date_of_birth, weight, gender, email, city, oib, blood_type, institution)
+                  VALUES ('{$username}', '{$password1}', '{$name}', '{$surname}', {$date_of_birth}, '{$weight}', '{$gender}', '{$email}', '{$city}', '{$oib}', '{$blood_type}', '{$institution}');");
+        $base->closeConn();
+//        header("Location: " . dirname($_SERVER['REQUEST_URI']) . '../index.php');
     }
 }
