@@ -1,0 +1,82 @@
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:layout_marginTop="15dp"
+	    android:layout_marginBottom="15dp"
+	    android:gravity="center_horizontal"
+	    >
+	
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="20sp"
+	        android:text="@string/str_ime" 
+	        />
+	    <EditText
+	        android:id="@+id/edit_ime_register"
+	        android:layout_width="300dp"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="20dp"
+	        android:gravity="center"
+	        android:imeOptions="actionNext"
+	        android:hint="@string/str_dodirni"
+	        >
+	        <requestFocus />
+	    </EditText>
+	    
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="20sp"
+	        android:text="@string/str_prezime" 
+	        />
+	    <EditText
+	        android:id="@+id/edit_prezime_register"
+	        android:layout_width="300dp"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="20dp"
+	        android:gravity="center"
+	        android:imeOptions="actionNext"
+	        android:hint="@string/str_dodirni"
+	        >
+	        <requestFocus />
+	    </EditText>
+	    
+	    
+	    <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="20sp"
+	        android:text="@string/str_grad" 
+	        />
+	    <Spinner
+	        android:id="@+id/spinner_grad"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="20dp"
+	        />
+	    
+	    
+	    <TextView
+	        android:id="@+id/label_date_register"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="20sp"
+	        android:layout_marginBottom="10dp"
+	        android:text="@string/str_datum_r" 
+	        />
+	    <Button
+	        android:id="@+id/button_date_register"
+	        android:layout_width="200dp"
+	        android:layout_height="wrap_content"
+	        android:text="@string/str_odaberi_datum"
+	        />
+	</LinearLayout>
+    
+</ScrollView>

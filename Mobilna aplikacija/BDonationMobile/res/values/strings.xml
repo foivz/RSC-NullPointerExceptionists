@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BDonationMobile</string>
+    <string name="drawer_open"> Otvori izbornik</string>
+    <string name="drawer_close">Zatvori izbornik</string>
+    <string name="str_dodirni">Dodirni za unos: </string>
+    <string name="str_login"> Prijava</string>
+    <string name="str_register"> Registracija</string>
+    <string name="str_username"> Korisničko ime: </string>
+    <string name="str_password"> Lozinka: </string>
+    <string name="str_ime"> Ime: </string>
+    <string name="str_prezime"> Prezime: </string>
+    <string name="str_datum_r"> Datum rođenja: </string>
+    <string name="str_grad"> Odaberi grad</string>
+    <string name="str_odaberi_datum"> Odaberi datum</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
