@@ -22,6 +22,11 @@
 			$veza->closeConn();
 			return $institucije;
 		}
+
+		public static function UcitajSpremisteKrvi()
+		{
+			
+		}
 	}
 
 

@@ -6,12 +6,7 @@
 		private $name;
 		private $location;
 		private $description;
-		private $bloodStorage
-
-		function __construct($id) 
-		{
-			$this->id = $id;
-		}
+		private $bloodStorage;
 
 		function __construct($id, $name, $location, $description, $bloodStorage)
 		{
@@ -19,8 +14,7 @@
 			$this->name = $name;
 			$this->location = $location;
 			$this->description = $description;
-			$this->dosage = $dosage;
-			$this->criticalDosage = $criticalDosage;
+			$this->bloodStorage = $bloodStorage;
 		}
 
 		public function getID() 
